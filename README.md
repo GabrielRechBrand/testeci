@@ -11,9 +11,9 @@ Você vai criar uma aplicação de cadastro de pedidos de compra com as seguinte
 - CRUD de produtos.
 - CRUD de pedidos de compra, com status (Em Aberto, Pago ou Cancelado).
 - Cada CRUD:
-  - deve ser filtrável e ordenável por qualquer campo, e possuir paginação de 20 itens.
-  - deve possuir formulários para criação e atualização de seus itens.
-  - deve permitir a deleção de qualquer item de sua lista.
+    - deve ser filtrável e ordenável por qualquer campo, e possuir paginação de 20 itens.
+    - deve possuir formulários para criação e atualização de seus itens.
+    - deve permitir a deleção de qualquer item de sua lista.
 - Barra de navegação entre os CRUDs.
 
 ## Modelo de dados
@@ -45,7 +45,7 @@ Devem ser utilizadas as seguintes tecnologias:
 
 ## Bônus
 
-- Usar Jquery , vuejs , bootstrap 
+- Usar Jquery , vuejs , bootstrap
 - Sugerir mudanças neste teste
 - Vagrant ou Docker
 - Api em REST
