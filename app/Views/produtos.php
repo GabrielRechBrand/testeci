@@ -37,7 +37,6 @@
             if(!confirm('Você realmente deseja excluir esse produto?')) {
                 return false;
             }
-
             return true;
         }
     </script>

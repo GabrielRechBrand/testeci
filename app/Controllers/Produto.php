@@ -36,7 +36,7 @@ class Produto extends BaseController
 
     public function create()
     {
-        return view('form');
+        return view('produtoForm');
     }
 
     public function store()
@@ -52,7 +52,7 @@ class Produto extends BaseController
 
     public function edit($id)
     {
-        return view('form', [
+        return view('produtoForm', [
             'produto' => $this->produtoModel->find($id)
         ]);
     }

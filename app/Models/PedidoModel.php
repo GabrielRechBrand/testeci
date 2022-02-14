@@ -7,14 +7,16 @@ use CodeIgniter\Model;
 class PedidoModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'pedidos';
+    protected $table            = 'pedido';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = [
+        'chave_nfe', 'fornecedor', 'id_produto', 'quantidade', 'valor', 'estado'
+    ];
 
     // Validation
     protected $validationRules      = [];
