@@ -33,10 +33,10 @@ class Database extends Config
     public $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
-        'DBDriver' => 'MySQLi',
+        'username' => 'postgres',
+        'password' => 'postgres',
+        'database' => 'testecidb',
+        'DBDriver' => 'Postgre',
         'DBPrefix' => '',
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
@@ -47,7 +47,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3306,
+        'port'     => 5432,
     ];
 
     /**
@@ -57,12 +57,12 @@ class Database extends Config
      * @var array
      */
     public $tests = [
-        'DSN'      => '',
-        'hostname' => '127.0.0.1',
-        'username' => '',
-        'password' => '',
-        'database' => ':memory:',
-        'DBDriver' => 'SQLite3',
+        'DSN'      => 'pgsql:host=localhost;port=5432;dbname=testecidb;user=admin;password=admin',
+        'hostname' => 'localhost',
+        'username' => 'admin',
+        'password' => 'admin',
+        'database' => 'testecidb',
+        'DBDriver' => 'Postgre',
         'DBPrefix' => 'db_',  // Needed to ensure we're working correctly with prefixes live. DO NOT REMOVE FOR CI DEVS
         'pConnect' => false,
         'DBDebug'  => (ENVIRONMENT !== 'production'),
