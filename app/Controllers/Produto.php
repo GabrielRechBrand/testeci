@@ -14,6 +14,7 @@ class Produto extends BaseController
     {
         $this->produtoModel = new ProdutoModel();
     }
+
     public function index()
     {
         return view('produtos', [
@@ -21,4 +22,39 @@ class Produto extends BaseController
             'pager' => $this->produtoModel->pager
         ]);
     }
+
+    public function delete($id)
+    {
+        if($this->produtoModel->delete($id)) {
+            echo view('messages', [
+                'message' => 'Produto excluído com sucesso!'
+            ]);
+        } else {
+            echo "Erro.";
+        }
+    }
+
+    public function create()
+    {
+        return view('form');
+    }
+
+    public function store()
+    {
+        if ($this->produtoModel->save($this->request->getPost())) {
+            return view("messages", [
+                'message' => 'Produto salvo com sucesso'
+            ]);
+        } else {
+            echo "Ocorreu um erro.";
+        }
+    }
+
+    public function edit($id)
+    {
+        return view('form', [
+            'produto' => $this->produtoModel->find($id)
+        ]);
+    }
+
 }

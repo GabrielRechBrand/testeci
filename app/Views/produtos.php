@@ -27,10 +27,24 @@
         ul.pagination li a:hover:not(.active) {
             background-color: #ddd;
         }
+        a, a:hover {
+            color: #4CAF50;
+        }
+
     </style>
+    <script>
+        function confirma() {
+            if(!confirm('Você realmente deseja excluir esse produto?')) {
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 <body>
     <div class="container mt-5">
+        <?php echo anchor(base_url('produto/create/'), 'Criar novo produto', ['class' => 'btn btn-success mb-3']) ?>
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -44,9 +58,9 @@
                     <td><?php echo $produto['nome']?></td>
                     <td><?php echo 'R$' . $produto['preço']?></td>
                     <td>
-                        <?php echo anchor('produto/edit'.$produto['id'], 'Editar') ?>
+                        <?php echo anchor('produto/edit/'.$produto['id'], 'Editar') ?>
                         -
-                        <?php echo anchor('produto/delete'.$produto['id'], 'Excluir') ?>
+                        <?php echo anchor('produto/delete/'.$produto['id'], 'Excluir', ['onclick' => 'return confirma()']) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>
