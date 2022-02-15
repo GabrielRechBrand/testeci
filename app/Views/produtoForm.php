@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="containter mt-5">
-        <?php echo form_open(base_url('produto/store/')) ?>
+        <?php echo form_open('produto/store') ?>
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" value="<?php echo isset($produto['nome']) ? $produto['nome'] : '' ?>" name="nome" id="nome" class="form-control">

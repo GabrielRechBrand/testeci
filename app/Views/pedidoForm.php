@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="containter mt-5">
-        <?php echo form_open(base_url('pedido/store/')) ?>
+        <?php echo form_open('pedido/store') ?>
         <div class="form-group">
             <label for="chave_nfe">Chave NFE</label>
             <input type="text" value="<?php echo isset($pedido['chave_nfe']) ? $pedido['chave_nfe'] : '' ?>" name="chave_nfe" id="chave_nfe" class="form-control">
