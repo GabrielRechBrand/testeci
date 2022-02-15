@@ -14,7 +14,7 @@
 
         <div class="alert alert-info">
             <?php echo $message; ?>
-            <p class="mt-3"><?php echo anchor("/produto", 'Acessar pedidos') ?></p>
+            <p class="mt-3"><?php echo anchor("/pedido", 'Acessar pedidos') ?></p>
             <p class="mt-3"><?php echo anchor("/produto", 'Acessar produtos') ?></p>
         </div>
         </div>

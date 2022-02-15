@@ -8,7 +8,7 @@ class PedidoModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'pedido';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_pedido';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';

@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <title>Produtos</title>
+    <title>Fornecedores</title>
     <style>
         ul.pagination li {
             display: inline;
@@ -30,11 +30,10 @@
         a, a:hover {
             color: #4CAF50;
         }
-
     </style>
     <script>
         function confirma() {
-            if(!confirm('Você realmente deseja excluir esse produto?')) {
+            if(!confirm('Você realmente deseja excluir esse pedido?')) {
                 return false;
             }
             return true;
@@ -43,25 +42,22 @@
 </head>
 <body>
     <div class="container mt-5">
-        <?php echo anchor(base_url('produto/create/'), 'Criar novo produto', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('fornecedor/create/'), 'Criar novo fornecedor', ['class' => 'btn btn-success mb-3']) ?>
         <?php echo anchor(base_url('pedido/'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
-        <?php echo anchor(base_url('fornecedor/'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('produto/'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
         <table class="table">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Preço</th>
-                <th>Ações</th>
             </tr>
-            <?php foreach($produtos as $produto) :?>
+            <?php foreach($fornecedores as $fornecedor) :?>
                 <tr>
-                    <td><?php echo $produto['id_produto']?></td>
-                    <td><?php echo $produto['nome']?></td>
-                    <td><?php echo 'R$' . $produto['preço']?></td>
+                    <td><?php echo $fornecedor['id_fornecedor']?></td>
+                    <td><?php echo $fornecedor['nome']?></td>
                     <td>
-                        <?php echo anchor('produto/edit/'.$produto['id_produto'], 'Editar') ?>
+                        <?php echo anchor('fornecedor/edit/'.$fornecedor['id_fornecedor'], 'Editar') ?>
                         -
-                        <?php echo anchor('produto/delete/'.$produto['id_produto'], 'Excluir', ['onclick' => 'return confirma()']) ?>
+                        <?php echo anchor('fornecedor/delete/'.$fornecedor['id_fornecedor'], 'Excluir', ['onclick' => 'return confirma()']) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

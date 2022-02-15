@@ -4,19 +4,17 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ProdutoModel extends Model
+class FornecedorModel extends Model
 {
     protected $DBGroup          = 'default';
-    protected $table            = 'produto';
-    protected $primaryKey       = 'id_produto';
+    protected $table            = 'fornecedor';
+    protected $primaryKey       = 'id_fornecedor';
     protected $useAutoIncrement = true;
     protected $insertID         = 0;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [
-        'nome', 'preço'
-    ];
+    protected $allowedFields    = ['id_fornecedor', 'nome'];
 
     // Validation
     protected $validationRules      = [];

@@ -43,10 +43,13 @@
 <body>
 <div class="container mt-5">
     <?php echo anchor(base_url('pedido/create/'), 'Criar novo pedido', ['class' => 'btn btn-success mb-3']) ?>
+    <?php echo anchor(base_url('produto/'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
+    <?php echo anchor(base_url('fornecedor/'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
     <table class="table">
         <tr>
+            <th>ID</th>
             <th>Chave_NFE</th>
-            <th>Fornecedor</th>
+            <th>ID do Fornecedor</th>
             <th>ID do Produto</th>
             <th>Quantidade</th>
             <th>Valor total</th>
@@ -54,8 +57,9 @@
         </tr>
         <?php foreach($pedidos as $pedido) :?>
             <tr>
+                <td><?php echo $pedido['id_pedido']?></td>
                 <td><?php echo $pedido['chave_nfe']?></td>
-                <td><?php echo $pedido['fornecedor']?></td>
+                <td><?php echo $pedido['id_fornecedor']?></td>
                 <td><?php echo $pedido['id_produto']?></td>
                 <td><?php echo $pedido['quantidade']?></td>
                 <td><?php echo $pedido['valor_total']?></td>

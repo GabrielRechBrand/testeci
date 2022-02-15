@@ -18,14 +18,14 @@ class Produto extends BaseController
     public function index()
     {
         return view('produtos', [
-            'produtos' => $this->produtoModel->orderBy("id", "asc")->paginate(20),
+            'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->paginate(20),
             'pager' => $this->produtoModel->pager
         ]);
     }
 
-    public function delete($id)
+    public function delete($id_produto)
     {
-        if($this->produtoModel->delete($id)) {
+        if($this->produtoModel->delete($id_produto)) {
             echo view('messages', [
                 'message' => 'Produto excluído com sucesso!'
             ]);
@@ -50,10 +50,10 @@ class Produto extends BaseController
         }
     }
 
-    public function edit($id)
+    public function edit($id_produto)
     {
         return view('produtoForm', [
-            'produto' => $this->produtoModel->find($id)
+            'produto' => $this->produtoModel->find($id_produto)
         ]);
     }
 
