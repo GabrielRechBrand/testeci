@@ -34,4 +34,8 @@ class ProdutoModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    /**
+     * @var mixed|null
+     */
+
 }

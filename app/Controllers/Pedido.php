@@ -69,13 +69,11 @@ class Pedido extends BaseController
         } else {
             $quantidade = $this->request->getVar('quantidade');
             $id_produto = $this->request->getVar('id_produto');
-            $id_pedido = $this->request->getVar('id_pedido');
-            $produto = $this->produtoModel->asObject($id_produto);
-            $data = [
-                'valor_total' => $produto->preço * $quantidade
-            ];
-            if ($this->pedidoModel->save($this->request->getPost())) {
-                $this->pedidoModel->update($id_pedido, $data);
+            $produto = $this->produtoModel->find($id_produto);
+            $valor_total = $produto['preço'] * $quantidade;
+            $data = $this->request->getRawInput();
+            $data['valor_total'] = $valor_total;
+            if ($this->pedidoModel->save($data)) {
                 return view("messages", [
                     'message' => 'Pedido salvo com sucesso'
                 ]);
