@@ -21,10 +21,10 @@ class Pedido extends BaseController
         $this->fornecedorModel = new FornecedorModel();
     }
 
-    public function index()
+    public function index($orderBy)
     {
         return view('pedidos', [
-            'pedidos' => $this->pedidoModel->orderBy("estado", "asc")->paginate(20),
+            'pedidos' => $this->pedidoModel->orderBy($orderBy, 'asc')->paginate(20),
             'pager' => $this->pedidoModel->pager
         ]);
     }
@@ -85,14 +85,26 @@ class Pedido extends BaseController
 
     public function edit($id_pedido)
     {
+        $pedido = $this->pedidoModel->find($id_pedido);
+
         return view('pedidoForm', [
             'pedido' => $this->pedidoModel->find($id_pedido),
             'chave_nfe' => $this->generateRandomString(20),
+            'produto' => $this->produtoModel->find($pedido['id_produto']),
             'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->findAll(20),
+            'fornecedor' => $this->fornecedorModel->find($pedido['id_fornecedor']),
             'fornecedores' => $this->fornecedorModel->orderBy("nome", "asc")->findAll()
         ]);
     }
 
+    public function search($id_pedido=null) {
+
+        return view('pedidos', [
+            'pedidos' => $this->pedidoModel->where('id_pedido', $id_pedido)->paginate(20),
+            'pager' => $this->pedidoModel->pager
+        ]);
+
+    }
     function generateRandomString($length = 20)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

@@ -17,14 +17,14 @@
 </head>
 <body>
     <div class="containter mt-5">
-        <?php echo form_open('produto/confirmacao') ?>
+        <?php echo form_open('produto/store') ?>
         <div class="form-group">
             <label for="nome">Nome</label>
             <input type="text" value="<?php echo isset($produto['nome']) ? $produto['nome'] : '' ?>" name="nome" id="nome" class="form-control" autocomplete="off">
         </div>
         <div class="form-group">
             <label for="preço">Preço</label>
-            <input type="number" min="1" max=" value="<?php echo isset($produto['preço']) ? $produto['preço'] : '' ?> name="preço" id="preço" class="form-control" autocomplete="off">
+            <input type="number" min="1" max="" value="<?php echo isset($produto['preço']) ? $produto['preço'] : '' ?>" name="preço" id="preço" class="form-control" autocomplete="off" step="any">
         </div>
         <div>
             <input type="submit" value="Salvar" class="btn btn-primary">

@@ -27,10 +27,10 @@
         ul.pagination li a:hover:not(.active) {
             background-color: #ddd;
         }
-        a, a:hover {
-            color: #4CAF50;
+        a {
+            font-weight: bold;
+            font-size: 13px;
         }
-
     </style>
     <script>
         function confirma() {
@@ -39,14 +39,20 @@
             }
             return true;
         }
-
     </script>
 </head>
 <body>
     <div class="container mt-5">
         <?php echo anchor(base_url('produto/create/'), 'Criar novo produto', ['class' => 'btn btn-success mb-3']) ?>
-        <?php echo anchor(base_url('pedido/'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
-        <?php echo anchor(base_url('fornecedor/'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('pedido/index/id_pedido'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('fornecedor/index/id_fornecedor'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+        <br>
+        |
+        <?php echo anchor(base_url("/produto/index/id_produto"), 'Ordenar por ID') ?>
+        |
+        <?php echo anchor(base_url("/produto/index/nome"), 'Ordenar por Nome') ?>
+        |
+        <?php echo anchor(base_url("/produto/index/preço"), 'Ordenar por Preço') ?>
 
         <table class="table">
             <tr>

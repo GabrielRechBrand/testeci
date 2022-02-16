@@ -18,7 +18,6 @@
             padding: 8px 16px;
             text-decoration: none;
         }
-
         .active {
             background-color: #4CAF50;
             color: white;
@@ -27,8 +26,9 @@
         ul.pagination li a:hover:not(.active) {
             background-color: #ddd;
         }
-        a, a:hover {
-            color: #4CAF50;
+        a {
+            font-weight: bold;
+            font-size: 13px;
         }
     </style>
     <script>
@@ -42,9 +42,15 @@
 </head>
 <body>
     <div class="container mt-5">
-        <?php echo anchor(base_url('fornecedor/create/'), 'Criar novo fornecedor', ['class' => 'btn btn-success mb-3']) ?>
-        <?php echo anchor(base_url('pedido/'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
-        <?php echo anchor(base_url('produto/'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('fornecedor/create'), 'Criar novo fornecedor', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('pedido/index/id_pedido'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
+        <?php echo anchor(base_url('produto/index/id_produto'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
+        <br>
+        |
+        <?php echo anchor(base_url("/fornecedor/index/id_fornecedor"), 'Ordenar por ID') ?>
+        |
+        <?php echo anchor(base_url("/fornecedor/index/nome"), 'Ordenar por Nome') ?>
+        |
         <table class="table">
             <tr>
                 <th>ID</th>

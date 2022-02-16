@@ -27,24 +27,61 @@
         ul.pagination li a:hover:not(.active) {
             background-color: #ddd;
         }
-        a, a:hover {
-            color: #4CAF50;
+        a {
+            font-weight: bold;
+            font-size: 13px;
+        }
+        .searchLabel {
+            font-weight: bold;
         }
     </style>
     <script>
         function confirma() {
-            if(!confirm('Você realmente deseja excluir esse pedido?')) {
+            if (!confirm('Você realmente deseja excluir esse pedido?')) {
                 return false;
             }
             return true;
+        }
+    </script>
+    <script>
+        function callSearch() {
+            const id_pedido = document.getElementById('id_pedido').value;
+            window.location.href = `${window.location.origin}/pedido/search/${id_pedido}`;
+            return false;
         }
     </script>
 </head>
 <body>
 <div class="container mt-5">
     <?php echo anchor(base_url('pedido/create/'), 'Criar novo pedido', ['class' => 'btn btn-success mb-3']) ?>
-    <?php echo anchor(base_url('produto/'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
-    <?php echo anchor(base_url('fornecedor/'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+    <?php echo anchor(base_url('produto/index/id_produto'), 'Acessar os produtos', ['class' => 'btn btn-success mb-3']) ?>
+    <?php echo anchor(base_url('fornecedor/index/id_fornecedor'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+    <br>
+    |
+    <?php echo anchor(base_url("/pedido/index/id_pedido"), 'Ordenar por ID') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/chave_nfe"), 'Ordenar por Chave_NFE') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/id_fornecedor"), 'Ordenar por ID do Fornecedor') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/id_produto"), 'Ordenar por ID do Produto') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/quantidade"), 'Ordenar por Quantidade') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/valor_total"), 'Ordenar por Valor Total') ?>
+    |
+    <?php echo anchor(base_url("/pedido/index/estado"), 'Ordenar por Estado') ?>
+    |
+    <br>
+    <br>
+    <div>
+        <form onsubmit="return callSearch();">
+            <label class="searchLabel">Buscar</label>
+            <input type="text" name="id_pedido" placeholder="Pesquise por um ID" style="display: inline-block" class="searchLabel" id="id_pedido">
+            <input type="submit" value="Submit" name="submit">
+        </form>
+    </div>
+    <br>
     <table class="table">
         <tr>
             <th>ID</th>

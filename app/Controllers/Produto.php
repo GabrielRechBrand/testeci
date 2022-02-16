@@ -15,10 +15,10 @@ class Produto extends BaseController
         $this->produtoModel = new ProdutoModel();
     }
 
-    public function index()
+    public function index($orderBy)
     {
         return view('produtos', [
-            'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->paginate(20),
+            'produtos' => $this->produtoModel->orderBy($orderBy, "asc")->paginate(20),
             'pager' => $this->produtoModel->pager
         ]);
     }

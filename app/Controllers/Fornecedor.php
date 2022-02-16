@@ -16,10 +16,10 @@ class Fornecedor extends BaseController
         $this->fornecedorModel = new FornecedorModel();
     }
 
-    public function index()
+    public function index($orderBy)
     {
         return view('fornecedores', [
-            'fornecedores' => $this->fornecedorModel->orderBy("id_fornecedor", "asc")->paginate(20),
+            'fornecedores' => $this->fornecedorModel->orderBy($orderBy, "asc")->paginate(20),
             'pager' => $this->fornecedorModel->pager
         ]);
     }
