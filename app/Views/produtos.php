@@ -39,6 +39,7 @@
             }
             return true;
         }
+
     </script>
 </head>
 <body>
@@ -46,6 +47,7 @@
         <?php echo anchor(base_url('produto/create/'), 'Criar novo produto', ['class' => 'btn btn-success mb-3']) ?>
         <?php echo anchor(base_url('pedido/'), 'Acessar os pedidos', ['class' => 'btn btn-success mb-3']) ?>
         <?php echo anchor(base_url('fornecedor/'), 'Acessar os fornecedores', ['class' => 'btn btn-success mb-3']) ?>
+
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -54,6 +56,7 @@
                 <th>Ações</th>
             </tr>
             <?php foreach($produtos as $produto) :?>
+
                 <tr>
                     <td><?php echo $produto['id_produto']?></td>
                     <td><?php echo $produto['nome']?></td>

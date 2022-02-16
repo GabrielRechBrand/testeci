@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <title>Edição de pedidos</title>
     <style>
+        div {
+            margin-left: 25px;
+            max-width: 800px;
+            max-height: 600px;
+        }
         label {
             font-weight: bolder;
         }
@@ -15,39 +20,49 @@
 </head>
 <body>
     <div class="containter mt-5">
+
+        <?= \Config\Services::validation()->listErrors(); ?>
+
         <?php echo form_open('pedido/store') ?>
         <div class="form-group">
             <label for="chave_nfe">Chave NFE</label> <br>
-            <?php echo $chave_nfe?>
+            <input type="text" value="<?php echo $chave_nfe?>" name="chave_nfe" id="chave_nfe" class="form-control" readonly>
         </div>
         <div class="form-group">
             <label for="fornecedor">ID_Fornecedor</label>
-            <select>
-                <option value="">--Escolha uma opção--</option>
+            <select id="id_fornecedor" class="form-control" name="id_fornecedor">
+                <option value="">Selecione um Fornecedor</option>
                 <?php foreach ($fornecedores as $fornecedor) :?>
-                    <option value=<?php $fornecedor['id_fornecedor'] ?>><?php echo $fornecedor['nome'] ?></option>
+                    <option value=<?php echo $fornecedor['id_fornecedor'] ?>><?php echo $fornecedor['nome'] ?></option>
                 <?php endforeach;?>
             </select>
         </div>
+
         <div class="form-group">
             <label for="idProduto">Produto</label>
-            <select>
-                <option value="">--Escolha uma opção--</option>
+            <select id="id_produto" class="form-control" name="id_produto">
+                <option value="">Selecione um Produto</option>
                 <?php foreach ($produtos as $produto) :?>
-                <option value=<?php $produto['id_produto'] ?>><?php echo $produto['nome'] ?></option>
+                    <option value=<?php echo $produto['id_produto'] ?>><?php echo $produto['nome'] ?></option>
                 <?php endforeach;?>
             </select>
         </div>
         <div class="form-group">
-            <label for="quantidade">Quantidade</label>
-            <input type="quantidade" value="<?php echo isset($pedido['quantidade']) ? $pedido['quantidade'] : '' ?>" name="quantidade" id="quantidade" class="form-control">
+            <label for="quantidade">Quantidade</label> <br>
+            <input type="number" step="1" min="1" max="" name="quantidade" value="1" title="quantidade" class="input-text quantidade text" size="4" pattern="" inputmode="">
         </div>
         <div class="form-group">
-            <label for="valorTotal">Valor total</label>
-            <label><?php echo $produto['preço'] ?></label>
+            <label for="estado">Estado</label> <br>
+            <select id="estado" class="form-control" name="estado">
+                <option value="">Selecione o Estado</option>
+                <option value="Aberto">Aberto</option>
+                <option value="Pago">Pago</option>
+                <option value="Cancelado">Cancelado</option>
+            </select>
         </div>
-        <input type="submit" value="Salvar" class="btn btn-primary">
-        <input type="hidden" name="chave_nfe" value="<?php echo isset($pedido['chave_nfe']) ? $pedido['chave_nfe'] : '' ?>">
+        <div>
+            <input type="submit" value="Salvar" class="btn btn-primary">
+        </div>
         <?php echo form_close() ?>
     </div>
 </body>

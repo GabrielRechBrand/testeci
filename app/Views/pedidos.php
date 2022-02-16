@@ -65,9 +65,9 @@
                 <td><?php echo $pedido['valor_total']?></td>
                 <td><?php echo $pedido['estado']?></td>
                 <td>
-                    <?php echo anchor('pedido/edit/'.$pedido['chave_nfe'], 'Editar') ?>
+                    <?php echo anchor('pedido/edit/'.$pedido['id_pedido'], 'Editar') ?>
                     -
-                    <?php echo anchor('pedido/delete/'.$pedido['chave_nfe'], 'Excluir', ['onclick' => 'return confirma()']) ?>
+                    <?php echo anchor('pedido/delete/'.$pedido['id_pedido'], 'Excluir', ['onclick' => 'return confirma()']) ?>
                 </td>
             </tr>
         <?php endforeach; ?>

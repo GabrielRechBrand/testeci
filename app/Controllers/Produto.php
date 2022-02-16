@@ -25,6 +25,7 @@ class Produto extends BaseController
 
     public function delete($id_produto)
     {
+
         if($this->produtoModel->delete($id_produto)) {
             echo view('messages', [
                 'message' => 'Produto excluído com sucesso!'
@@ -39,8 +40,14 @@ class Produto extends BaseController
         return view('produtoForm');
     }
 
+    public function find($id_produto)
+    {
+        return $this->find($id_produto);
+    }
+
     public function store()
     {
+
         if ($this->produtoModel->save($this->request->getPost())) {
             return view("messages", [
                 'message' => 'Produto salvo com sucesso'

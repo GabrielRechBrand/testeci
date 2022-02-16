@@ -46,29 +46,57 @@ class Pedido extends BaseController
             'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->paginate(20),
             'fornecedores' => $this->fornecedorModel->orderBy("nome", "asc")->paginate(20),
             'pager' => $this->produtoModel->pager,
-            'chave_nfe' => $this->generateRandomString(20)
+            'chave_nfe' => $this->generateRandomString(20),
         ]);
     }
 
     public function store()
     {
-        if ($this->pedidoModel->save($this->request->getPost())) {
-            return view("messages", [
-                'message' => 'Pedido salvo com sucesso'
+        helper(['form', 'url']);
+        if (! $this->validate([
+            'quantidade' => 'required',
+            'id_fornecedor' => 'required',
+            'id_produto' => 'required',
+            'estado' => 'required'
+        ])) {
+            echo view('pedidoForm', [
+                'validation' => $this->validator,
+                'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->findAll(20),
+                'fornecedores' => $this->fornecedorModel->orderBy("nome", "asc")->findAll(20),
+                'pager' => $this->produtoModel->pager,
+                'chave_nfe' => $this->generateRandomString(20)
             ]);
         } else {
-            echo "Ocorreu um erro.";
+            $quantidade = $this->request->getVar('quantidade');
+            $id_produto = $this->request->getVar('id_produto');
+            $id_pedido = $this->request->getVar('id_pedido');
+            $produto = $this->produtoModel->asObject($id_produto);
+            $data = [
+                'valor_total' => $produto->preço * $quantidade
+            ];
+            if ($this->pedidoModel->save($this->request->getPost())) {
+                $this->pedidoModel->update($id_pedido, $data);
+                return view("messages", [
+                    'message' => 'Pedido salvo com sucesso'
+                ]);
+            } else {
+                echo "Ocorreu um erro.";
+            }
         }
     }
 
     public function edit($id_pedido)
     {
         return view('pedidoForm', [
-            'pedido' => $this->pedidoModel->find($id_pedido)
+            'pedido' => $this->pedidoModel->find($id_pedido),
+            'chave_nfe' => $this->generateRandomString(20),
+            'produtos' => $this->produtoModel->orderBy("id_produto", "asc")->findAll(20),
+            'fornecedores' => $this->fornecedorModel->orderBy("nome", "asc")->findAll()
         ]);
     }
 
-    function generateRandomString($length = 20) {
+    function generateRandomString($length = 20)
+    {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';

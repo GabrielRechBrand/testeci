@@ -16,6 +16,7 @@
             <?php echo $message; ?>
             <p class="mt-3"><?php echo anchor("/pedido", 'Acessar pedidos') ?></p>
             <p class="mt-3"><?php echo anchor("/produto", 'Acessar produtos') ?></p>
+            <p class="mt-3"><?php echo anchor("/fornecedor", 'Acessar fornecedores') ?></p>
         </div>
         </div>
 

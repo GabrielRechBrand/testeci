@@ -15,7 +15,7 @@ class PedidoModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = [
-        'chave_nfe', 'fornecedor', 'id_produto', 'quantidade', 'valor', 'estado'
+        'chave_nfe', 'id_fornecedor', 'id_produto', 'quantidade', 'valor_total', 'estado'
     ];
 
     // Validation
