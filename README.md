@@ -6,7 +6,7 @@
     Desenvolver um sistema capaz de gerenciar pedidos, seus produtos e fornecedores em formato de tabelas.
 <br>
 
-## Observações e como usar:
+## Observações:
 
 <br>
 
@@ -14,9 +14,7 @@
 <br>
     - O banco de dados usado foi o PostgreSQL. Os nomes das tabelas têm de ser: <b>"produto"</b> -> Para os produtos, <b>"pedido"</b> -> Para os pedidos, e <b>"fornecedor"</b> -> Para os fornecedores. <br><br>
     - Segue o script de criação de todas as tabelas: <br><br>
-        <img src="https://i.imgur.com/9bAI1tm.png"/> <br>
-        <img src="https://i.imgur.com/xJ6s2V9.png"/> <br>
-        <img src="https://i.imgur.com/IfBXm61.png"/>
+        <img src="https://i.imgur.com/AtqVgtp.png"/> <br>
 
 ### Avisos gerais:
 <br>
