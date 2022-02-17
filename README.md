@@ -56,7 +56,7 @@
 
 ### Como inicializar o projeto
 
-  - Você irá precisar de um CLI Interpretar do PHP, isso pode ser instalado via Xampp. Na sua IDE, vá nas suas configurações do PHP e adicione o seu CLI Interpreter no diretório do xampp. O diretório padrão é `C:\xampp\php\php.exe`.
+  - Você irá precisar de um CLI Interpretar do PHP, isso pode ser instalado via Xampp. Na sua IDE, vá nas suas configurações do PHP e adicione o seu CLI Interpreter, que está no diretório do xampp. O diretório padrão é `C:\xampp\php\php.exe`.
 
     <img src="https://i.imgur.com/sInc7m8.png" />
     
@@ -68,7 +68,7 @@
 
 <br>
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" width="100px" height="100px"/> ]
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg" width="100px" height="100px"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="100px" height="100px"/> 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="100px" height="100px"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="100px" height="100px"/> 
