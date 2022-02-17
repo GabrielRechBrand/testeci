@@ -76,6 +76,8 @@
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" width="100px" height="100px"/>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" width="100px" height="100px"/>
 
+<br>
+
 ## Prévia do sistema
 
 ### Menu
