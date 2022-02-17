@@ -13,9 +13,9 @@
 ### Configurações da Database:
 <br>
     - O banco de dados usado foi o PostgreSQL. Os nomes das tabelas têm de ser: <br>
-            'produto' -> Para os produtos, <br>
-            'pedido' -> Para os pedidos, e <br>
-            'fornecedor' -> Para os fornecedores. <br>
+            <b>"produto"</b> -> Para os produtos, <br>
+            <b>"pedido"</b> -> Para os pedidos, e <br>
+            <b>"fornecedor"</b> -> Para os fornecedores. <br>
     - Segue o script de criação de todas as tabelas: <br>
         <img src="https://i.imgur.com/9bAI1tm.png"/> <br>
         <img src="https://i.imgur.com/xJ6s2V9.png"/> <br>
@@ -31,7 +31,13 @@
 ## Tecnologias utilizadas:
 
 <br>
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"  width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="100px" height="100px"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="100px" height="100px"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/codeigniter/codeigniter-plain.svg"  width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg" width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="25px" height="25px"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="25px" height="25px"/>
 <br>
 
 ## Prévia do sistema:
