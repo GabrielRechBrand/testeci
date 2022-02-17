@@ -12,11 +12,8 @@
 
 ### Configurações da Database:
 <br>
-    - O banco de dados usado foi o PostgreSQL. Os nomes das tabelas têm de ser: <br>
-            <b>"produto"</b> -> Para os produtos, <br>
-            <b>"pedido"</b> -> Para os pedidos, e <br>
-            <b>"fornecedor"</b> -> Para os fornecedores. <br>
-    - Segue o script de criação de todas as tabelas: <br>
+    - O banco de dados usado foi o PostgreSQL. Os nomes das tabelas têm de ser: <b>"produto"</b> -> Para os produtos, <b>"pedido"</b> -> Para os pedidos, e <b>"fornecedor"</b> -> Para os fornecedores. <br><br>
+    - Segue o script de criação de todas as tabelas: <br><br>
         <img src="https://i.imgur.com/9bAI1tm.png"/> <br>
         <img src="https://i.imgur.com/xJ6s2V9.png"/> <br>
         <img src="https://i.imgur.com/IfBXm61.png"/>
@@ -51,4 +48,4 @@
 <img src="https://i.imgur.com/qBnJLgs.png"/>
 
 ### Gerenciamento de fornecedores:
-<img src="https://i.imgur.com/T4rG0lt.png"/>
+<img src="https://i.imgur.com/VCq3PBd.png"/>
