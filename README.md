@@ -6,7 +6,7 @@
     Desenvolver um sistema capaz de gerenciar pedidos, seus produtos e fornecedores em formato de tabelas.
 <br>
 
-## Observações:
+## Observações e como inicializar o projeto:
 
 <br>
 
@@ -22,6 +22,13 @@
     - Pedidos podem ser ordenados crescentemente por qualquer campo. <br>
     - Pedidos podem ser pesquisados pelo seu ID.
 <br>  
+
+### Como inicializar o projeto:
+<br>
+    - Você irá precisar de um CLI Interpretar do PHP, isso pode ser instalado via Xampp. Na sua IDE, vá nas suas configurações do PHP e adicione o seu CLI Interpreter no diretório do xampp. O diretório padrão é: "C:\xampp\php\php.exe". <br><br>
+    <img src="https://i.imgur.com/sInc7m8.png" /> <br><br>
+    - Após concluir os passos acima, apenas vá para o terminal e digite: "php spark serve". Então, você estará livre para acessar a aplicação no endereço indicado pelo próprio terminal. <br><br>
+    <img src="https://i.imgur.com/Y1EkGkJ.png" /> <br><br>
 
 ## Tecnologias utilizadas:
 
