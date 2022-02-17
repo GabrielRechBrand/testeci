@@ -17,36 +17,31 @@
    -   Os nomes das tabelas têm de ser:
        -   **"produto"** - para os produtos.
        -   **"pedido"** - para os pedidos.
-       -   **"fornecedor"** - Para os fornecedores.
+       -   **"fornecedor"** - para os fornecedores.
    - Script de criação da tabela:
      ```sql
         CREATE SEQUENCE id_produto;
         CREATE TABLE produto(
-            id_produto int default : : regclass)
-            nome Varchar (50)
-            prep Decimal (19, 2)
+            id_produto int default nextval('id_produto'::regclass) PRIMARY KEY,
+            nome Varchar(50),
+            preço Decimal(19, 2)
         )
         
         CREATE SEQUENCE id_fornecedor;
         CREATE TABLE fornecedor(
-            PRIMARY KEY,
-            id_fornecedor int default nextval(' id_fornecedor' : : regclass)
-            nome Varchar (50)
+            id_fornecedor int default nextval('id_fornecedor'::regclass) PRIMARY KEY,
+            nome Varchar(50)
         )
         
         CREATE SEQUENCE id_pedido;
         CREATE TABLE pedido(
-            default nextval( : : regclass)
-            id_pedido int
-            chave nfe Varchar (30)
+            id_pedido int default nextval('id_pedido'::regclass) PRIMARY KEY,
+            chave_nfe Varchar(30)
             quantidade int,
-            valor total int,
-            estado estado ,
-            id fornecedor int,
-            PRIMARY
-            PRIMARY KEY,
-            KEY,
-            FOREIGN KEY (id_fornecedor) REFERENCES fornecedor (id_ fornecedor)
+            valor_total int,
+            estado estado,
+            id_fornecedor int,
+            FOREIGN KEY (id_fornecedor) REFERENCES fornecedor (id_fornecedor),
             id_produto int,
             FOREIGN KEY (id_produto) REFERENCES produto (id_produto)
         )
